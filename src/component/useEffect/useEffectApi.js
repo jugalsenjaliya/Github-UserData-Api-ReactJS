@@ -5,15 +5,10 @@ const UseEffectApi = () => {
     const [users, setUsers] = useState([]);
 
     const getUsers = async () => {
-        // try {
         const response = await fetch('https://api.github.com/users');
-        // setLoading(false);
+
         setUsers(await response.json());
-        // }
-        // catch (error) {
-        // setLoading(false);
-        // console.log("my error is " + error);
-        // }
+       
     }
 
     useEffect(() => {
@@ -35,7 +30,7 @@ const UseEffectApi = () => {
                                             <div className="image"> <img src={curElem.avatar_url} className="rounded" width="155" /> </div>
                                             <div className="ml-3 w-100">
                                                 <h4 className="mb-0 mt-0 textLeft">{curElem.login}  </h4>
-                                                {/* <span className="text-left">{type }</span> */}
+                                                <span className="text-left">{curElem.type }</span>
                                                 <div className="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
                                                     <div className="d-flex flex-column">
                                                         <span className="articles">Articles</span> <span className="number1">38</span> </div>
